@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     private static ResourceSystem resourceSystem;
     public static ResourceSystem ResourceSystem { get { return resourceSystem; } }
     private static BuildingSystem buildingSystem;
-    public static BuildingSystem BuildingSystem { get { return BuildingSystem; } }
+    public static BuildingSystem BuildingSystem { get { return buildingSystem; } }
 
     void Awake()
     {

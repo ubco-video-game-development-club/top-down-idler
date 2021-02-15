@@ -8,12 +8,12 @@ public class BuildingMenu : MonoBehaviour
 
     void Start()
     {
-        // BuildingTile[] tiles = GameManager.BuildingSystem.GetBuildingTiles();
-        BuildingTile[] tiles = new BuildingTile[3];
+        BuildingTile[] tiles = GameManager.BuildingSystem.BuildingTiles;
 
         int count = Mathf.Min(selectors.Length, tiles.Length);
         for (int i = 0; i < selectors.Length; i++)
         {
+            if (i < count) selectors[i].BuildingTile = tiles[i];
             selectors[i].SetMenuActive(i < count);
         }
     }
