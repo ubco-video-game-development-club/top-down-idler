@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
-    private ResourceSystem resourceSystem;
-    public ResourceSystem ResourceSystem { get { return resourceSystem; } }
+    private static ResourceSystem resourceSystem;
+    public static ResourceSystem ResourceSystem { get { return resourceSystem; } }
 
     void Awake()
     {
