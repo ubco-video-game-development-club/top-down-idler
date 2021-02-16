@@ -12,17 +12,24 @@ public class BuildingSystem : MonoBehaviour
 
     [SerializeField] private Tilemap tilemap;
 
+    void Update()
+    {
+        if (activeBuildingTile != null && Input.GetMouseButtonDown(0))
+        {
+            PlaceBuilding();
+            activeBuildingTile = null;
+        }
+    }
+
     public void SetActiveBuilding(BuildingTile tile)
     {
         activeBuildingTile = tile;
     }
 
-    public BuildingTile PlaceBuilding(BuildingTile tile)
+    public void PlaceBuilding()
     {
-        Vector3 mousePos = Input.mousePosition;
-        // TODO: since this floors, this will only work if the tiles are set up a specific way. Let's check that. 
-        Debug.Log(tilemap.GetTile(new Vector3Int((int)mousePos.x, (int)mousePos.y, (int)mousePos.z)));
-        return new BuildingTile();
+        Vector3Int tilePos = Vector3Int.zero; // TODO
+        tilemap.SetTile(tilePos, activeBuildingTile);
     }
 
     private Vector3Int GetTilePositionAtMousePosition()
@@ -33,11 +40,13 @@ public class BuildingSystem : MonoBehaviour
         return cellPosition;
     }
 
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            GetTilePositionAtMousePosition();
-        }
-    }
+
+    // IN CONSTRUCTION
+    // private Vector2 GetTilePositionAtMousePosition()
+    // {
+    //     GridLayout gridLayout = GetComponent<GridLayout>();
+    //     Vector3Int cellPosition = gridLayout.WorldToCell(transform.position);
+    //     transform.position = gridLayout.CellToWorld(cellPosition);
+    //     Debug.Log()
+    // }
 }
