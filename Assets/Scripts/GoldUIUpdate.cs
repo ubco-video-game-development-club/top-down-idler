@@ -14,6 +14,6 @@ public class GoldUIUpdate : MonoBehaviour{
 
     private void UpdateGold(int gold) 
     {
-        textBox.text = "$"+gold.ToString();
+        textBox.text = "$" + gold.ToString();
     }
 }
