@@ -11,11 +11,18 @@ public class BuildingSystem : MonoBehaviour
     private BuildingTile activeBuildingTile;
 
     [SerializeField] private Tilemap tilemap;
+    private Grid layoutGrid;
+
+    void Awake()
+    {
+        layoutGrid = tilemap.layoutGrid;
+    }
 
     void Update()
     {
         if (activeBuildingTile != null && Input.GetMouseButtonDown(0))
         {
+            GetTilePositionAtMousePosition();
             PlaceBuilding();
             activeBuildingTile = null;
         }
@@ -34,9 +41,6 @@ public class BuildingSystem : MonoBehaviour
 
     private Vector3Int GetTilePositionAtMousePosition()
     {
-        GridLayout gridLayout = tilemap.layoutGrid;
-        Vector3Int cellPosition = gridLayout.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-        Debug.Log(cellPosition);
-        return cellPosition;
+        return layoutGrid.WorldToCell((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition));
     }
 }
