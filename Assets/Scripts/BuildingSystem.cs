@@ -22,7 +22,6 @@ public class BuildingSystem : MonoBehaviour
     {
         if (activeBuildingTile != null && Input.GetMouseButtonDown(0))
         {
-            GetTilePositionAtMousePosition();
             PlaceBuilding();
             activeBuildingTile = null;
         }
