@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     private static ResourceSystem resourceSystem;
     public static ResourceSystem ResourceSystem { get { return resourceSystem; } }
+    private static BuildingSystem buildingSystem;
+    public static BuildingSystem BuildingSystem { get { return buildingSystem; } }
 
     void Awake()
     {
@@ -19,5 +21,6 @@ public class GameManager : MonoBehaviour
         instance = this;
 
         resourceSystem = GetComponent<ResourceSystem>();
+        buildingSystem = GetComponent<BuildingSystem>();
     }
 }
