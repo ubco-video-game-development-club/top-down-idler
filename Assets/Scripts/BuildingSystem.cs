@@ -35,7 +35,7 @@ public class BuildingSystem : MonoBehaviour
     private Vector3Int GetTilePositionAtMousePosition()
     {
         GridLayout gridLayout = tilemap.layoutGrid;
-        Vector3Int cellPosition = gridLayout.WorldToCell(Input.mousePosition);
+        Vector3Int cellPosition = gridLayout.WorldToCell(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         Debug.Log(cellPosition);
         return cellPosition;
     }
