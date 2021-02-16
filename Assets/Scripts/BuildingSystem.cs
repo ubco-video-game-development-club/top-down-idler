@@ -17,16 +17,23 @@ public class BuildingSystem : MonoBehaviour
         tilemap = GetComponent<Tilemap>();
     }
 
+    void Update()
+    {
+        if (activeBuildingTile != null && Input.GetMouseButtonDown(0))
+        {
+            PlaceBuilding();
+            activeBuildingTile = null;
+        }
+    }
+
     public void SetActiveBuilding(BuildingTile tile)
     {
         activeBuildingTile = tile;
     }
 
-    public BuildingTile PlaceBuilding(BuildingTile tile)
+    public void PlaceBuilding()
     {
-
-
-
-        return new BuildingTile();
+        Vector3Int tilePos = Vector3Int.zero; // TODO
+        tilemap.SetTile(tilePos, activeBuildingTile);
     }
 }
