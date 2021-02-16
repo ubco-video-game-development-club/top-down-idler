@@ -28,7 +28,7 @@ public class BuildingSystem : MonoBehaviour
 
     public void PlaceBuilding()
     {
-        Vector3Int tilePos = Vector3Int.zero; // TODO
+        Vector3Int tilePos = GetTilePositionAtMousePosition();
         tilemap.SetTile(tilePos, activeBuildingTile);
     }
 
