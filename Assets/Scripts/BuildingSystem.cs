@@ -39,14 +39,4 @@ public class BuildingSystem : MonoBehaviour
         Debug.Log(cellPosition);
         return cellPosition;
     }
-
-
-    // IN CONSTRUCTION
-    // private Vector2 GetTilePositionAtMousePosition()
-    // {
-    //     GridLayout gridLayout = GetComponent<GridLayout>();
-    //     Vector3Int cellPosition = gridLayout.WorldToCell(transform.position);
-    //     transform.position = gridLayout.CellToWorld(cellPosition);
-    //     Debug.Log()
-    // }
 }
