@@ -10,12 +10,7 @@ public class BuildingSystem : MonoBehaviour
 
     private BuildingTile activeBuildingTile;
 
-    private Tilemap tilemap;
-
-    void Awake()
-    {
-        tilemap = GetComponent<Tilemap>();
-    }
+    [SerializeField] private Tilemap tilemap;
 
     void Update()
     {
@@ -36,4 +31,13 @@ public class BuildingSystem : MonoBehaviour
         Vector3Int tilePos = Vector3Int.zero; // TODO
         tilemap.SetTile(tilePos, activeBuildingTile);
     }
+
+    // IN CONSTRUCTION
+    // private Vector2 GetTilePositionAtMousePosition()
+    // {
+    //     GridLayout gridLayout = GetComponent<GridLayout>();
+    //     Vector3Int cellPosition = gridLayout.WorldToCell(transform.position);
+    //     transform.position = gridLayout.CellToWorld(cellPosition);
+    //     Debug.Log()
+    // }
 }

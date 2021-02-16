@@ -417,6 +417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingTiles:
   - {fileID: 11400000, guid: 3f8b7024128b65f40bf269f84208e54b, type: 2}
+  tilemap: {fileID: 797815861}
 --- !u!1001 &720609462
 PrefabInstance:
   m_ObjectHideFlags: 0
